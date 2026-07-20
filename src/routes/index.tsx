@@ -101,7 +101,9 @@ function App() {
         showNew={view !== "landing"}
       />
       <main>
-        {view === "landing" && <Landing t={t} onStart={startNew} onExample={viewExample} />}
+        {view === "landing" && (
+          <Landing t={t} lang={lang} onStart={startNew} onExample={viewExample} />
+        )}
         {view === "assessment" && (
           <Assessment
             t={t}
@@ -230,16 +232,31 @@ function Header({
 
 function Landing({
   t,
+  lang,
   onStart,
   onExample,
 }: {
   t: Translations;
+  lang: Lang;
   onStart: () => void;
   onExample: () => void;
 }) {
+  const heroAlt =
+    lang === "el"
+      ? "Δέντρο στατιστικών αποφάσεων με κλάδους που αναπαριστούν στατιστικούς ελέγχους"
+      : "Statistical decision tree with branches representing statistical tests";
+
   return (
-    <section className="container-page pt-14 pb-20 sm:pt-20 sm:pb-28">
-      <div className="max-w-3xl">
+    <section className="container-page pt-8 pb-20 sm:pt-10 sm:pb-28">
+      <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-card">
+        <img
+          src="/decision-tree-hero.png"
+          alt={heroAlt}
+          className="block h-auto w-full"
+        />
+      </div>
+
+      <div className="mt-10 max-w-3xl sm:mt-12">
         <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-secondary px-3 py-1 text-xs font-medium text-accent">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
           {t.evidenceBadge}

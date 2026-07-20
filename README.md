@@ -2,6 +2,12 @@
 
 An evidence-aware, bilingual (English/Greek) statistical decision-support application for postgraduate students, doctoral candidates, researchers, and educators.
 
+## Live demo
+
+Try the bilingual application at <https://statistical-decision-tree.lovable.app>.
+
+The deterministic assessment, report, audit, and software guidance work without an API key. The optional GPT-5.6 explanation requires a server-side `OPENAI_API_KEY` and is documented in the repository implementation.
+
 The app converts a structured six-step research-design interview into:
 
 - a primary statistical-method recommendation;
@@ -139,6 +145,8 @@ The response is constrained by a strict JSON schema. GPT-5.6 does not own the fi
 ## Repository
 
 Public repository: <https://github.com/smaratina/statistical-decision-tree>
+
+Live application: <https://statistical-decision-tree.lovable.app>
 
 ## License
 
